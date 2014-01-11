@@ -15,3 +15,17 @@
 // require turbolinks
 //= require_tree .
 //= require semantic-ui
+
+$(function() {
+
+	$('.ui.dropdown')
+  .dropdown();
+
+  $('#next-option').click(function(){
+  	$(this).hide();
+  	$('div.step-one').addClass('hide');
+  	$('div.step-two').removeClass('hide');
+  	$('#searchStep').find('.ui.step').removeClass('active').last().addClass('active');
+  	$('#submit-option').removeClass('hide').show();
+  });
+});

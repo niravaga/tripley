@@ -1,6 +1,86 @@
-.ui.fluid.page.grid
-	h3
-		| kjhjkds
 
-	.ui.segment
-  	p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+.ui.small.steps style='width:600px; margin:0 auto; display:block;' id='searchStep'
+  .ui.active.step
+    | Hi there! Tell us about your tour.
+  .ui.step
+    | Done
+
+.ui.segment style='width:600px; margin:0 auto;'
+
+  .ui.form
+    div.step-one
+      .field
+        /label Username
+        / .ui.left.labeled.icon.input
+        /   input placeholder="Username" type="text"
+        /     i.user.icon
+        /     .ui.corner.label
+        /       i.icon.asterisk
+        div
+          h3
+            | Where do you like to go?
+          hr
+          br
+          | I want to go to 
+          .ui.selection.dropdown
+            input name="country" type="hidden"
+              .text
+            i.dropdown.icon
+            .menu
+              - for country in Place.all.map(&:country).uniq
+                - next if country.blank?
+                .item.active data-text=country
+                  = country
+
+        br
+        .field
+          label How many days?
+          .ui.left.labeled.icon.input
+            input name='days' placeholder="Duration for travel" type="number"
+              i.time.icon
+
+        br
+        .two.fields
+          div
+            | Who are you going with?
+          br
+          .field
+            label Adults
+            .ui.left.labeled.icon.input
+              input name='adults' placeholder="Big People" type="number"
+                i.male.icon
+
+          .field
+            label Children
+            .ui.left.labeled.icon.input
+              input name='kids' placeholder="Kiddos" type="number"
+                i.users.icon
+
+    .ui.right.floated.button id='next-option'
+      | Next
+
+    div.step-two.hide
+      .field
+        label How much do you wish to spend in your trip?
+        .ui.left.labeled.icon.input
+          input type="number" name='cost' placeholder='Cumilative'
+            i.money.icon.red
+
+
+      .field
+        | What kind of trip is this?
+        br
+        br
+        | I am looking for 
+        .ui.selection.dropdown
+          input name="kind" type="hidden"
+            .text
+          i.dropdown.icon
+          .menu
+            - for kind in ['Honeymoon', 'Birthday', 'Anniversary', 'Casual Meet', 'Catch up', 'Stress buster', 'Retirement']
+              - next if kind.blank?
+              .item.active data-text=kind
+                = kind
+
+    .ui.right.floated.submit.button id='submit-option' style='display:none;'
+      | Submit
