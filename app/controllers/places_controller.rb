@@ -15,6 +15,10 @@ class PlacesController < ApplicationController
   def show
   end
 
+  def results
+    @places = Place.where(country: params[:country]).tagged_with(['bachelor', 'tags'], any: true)
+  end
+
   # GET /places/new
   def new
     @place = Place.new

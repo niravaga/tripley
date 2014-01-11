@@ -15,3 +15,26 @@
 @import "semantic-ui";
 
 .hide{ display:none; }
+
+.day_container {
+  position: relative;
+  width: 100%;
+  margin: 11px 0;
+}
+
+
+.day_container > div {
+    background: #CCC;
+    height: 100px;
+    position: absolute;
+    width: 80px;
+}
+.day_container {
+    border: 1px dashed #ccc;
+    position: relative;
+}
+
+.day_container .ss-placeholder-child {
+    background: transparent;
+    border: 1px dashed red;
+}

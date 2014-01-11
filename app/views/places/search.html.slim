@@ -7,7 +7,7 @@
 
 .ui.segment style='width:600px; margin:0 auto;'
 
-  .ui.form
+  form.ui.form action='/results' type='post'
     div.step-one
       .field
         /label Username
@@ -58,6 +58,7 @@
 
     .ui.right.floated.button id='next-option'
       | Next
+      i.icon.right.arrow
 
     div.step-two.hide
       .field
@@ -66,21 +67,73 @@
           input type="number" name='cost' placeholder='Cumilative'
             i.money.icon.red
 
-
+      br
+      br
       .field
         | What kind of trip is this?
         br
         br
         | I am looking for 
-        .ui.selection.dropdown
+        .ui.selection.dropdown type='kind'
           input name="kind" type="hidden"
             .text
           i.dropdown.icon
           .menu
-            - for kind in ['Honeymoon', 'Birthday', 'Anniversary', 'Casual Meet', 'Catch up', 'Stress buster', 'Retirement']
+            - for kind in ['Family', 'Honeymoon', 'Leisure', 'Birthday', 'Anniversary', 'Bachelor', 'Casual Meet', 'Catch up', 'Stress buster', 'Retirement']
               - next if kind.blank?
               .item.active data-text=kind
                 = kind
 
-    .ui.right.floated.submit.button id='submit-option' style='display:none;'
-      | Submit
+      .field.hide.taggy type='family'
+        | Select some of these!
+        br
+        br
+        | Might also try : &nbsp;&nbsp;
+        .ui.checkbox
+          input name="tags" type="checkbox" value='children'
+            label Children Activities
+        | ,&nbsp;&nbsp;
+        .ui.checkbox
+          input name="tags" type="checkbox" value='outdoors'
+            label Outdoors
+        | ,&nbsp;&nbsp;
+        .ui.checkbox
+          input name="tags" type="checkbox" value='shopping'
+            label Shopping
+        | ,&nbsp;&nbsp;
+        .ui.checkbox
+          input name="tags" type="checkbox" value='museum'
+            label Museum
+        | ,&nbsp;&nbsp;
+        .ui.checkbox
+          input name="tags" type="checkbox" value='arts'
+            label Arts & Entertiainment
+
+
+      .field.hide.taggy type='leisure'
+        | Select some of these!
+        br
+        br
+        | Might also try : &nbsp;&nbsp;
+        .ui.checkbox
+          input name="tags[]" type="checkbox" value='tourist'
+            label Tourist
+        | ,&nbsp;&nbsp;
+        .ui.checkbox
+          input name="tags[]" type="checkbox" value='nightlife'
+            label Nightlife
+        | ,&nbsp;&nbsp;
+        .ui.checkbox
+          input name="tags[]" type="checkbox" value='shopping'
+            label Shop
+        | ,&nbsp;&nbsp;
+        .ui.checkbox
+          input name="tags[]" type="checkbox" value='outdoor'
+            label Outdoors
+        | ,&nbsp;&nbsp;
+        .ui.checkbox
+          input name="tags[]" type="checkbox" value='arts'
+            label Arts & Entertiainment
+
+
+    input.ui.right.floated.teal.submit.button id='submit-option' style='display:none;' type='submit'

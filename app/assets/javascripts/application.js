@@ -15,11 +15,19 @@
 // require turbolinks
 //= require_tree .
 //= require semantic-ui
+//=jquery.ui.min
+//=jquery.shapeshift.min
 
 $(function() {
 
 	$('.ui.dropdown')
-  .dropdown();
+  .dropdown({
+  	onChange: function(val,text){
+				if( $(this).attr('type') != 'kind' )
+						return;
+				$('.field.taggy').addClass('hide').filter('[type='+val+']').removeClass('hide');
+			}
+  });
 
   $('#next-option').click(function(){
   	$(this).hide();
@@ -28,4 +36,12 @@ $(function() {
   	$('#searchStep').find('.ui.step').removeClass('active').last().addClass('active');
   	$('#submit-option').removeClass('hide').show();
   });
+
+  $('.ui.checkbox')
+  .checkbox()
+;
+	$('.day_container').shapeshift({
+		 enableCrossDrop: true,
+	   enableResize: true
+	});
 });
