@@ -1,0 +1,16 @@
+.ui.small.fixed.tired.menu id='mainmenu'
+  .menu
+    a.item.down href='/' class=('active' if current_page?(controller: 'places', action: 'index'))
+      i.icon.home
+      | Tripley
+
+    a.item.down href='/search'  class=('active' if current_page?(controller: 'places', action: 'search'))
+      i.icon.search
+      |  &nbsp; Find a place
+
+
+  / .ui.sub.menu class = ('hide' if current_page?(controller: 'deals', action: 'new'))
+  /   - for stage in STAGES.reverse
+  /     .item.right.pointer
+  /       i.icon.reorder
+  /       = stage
