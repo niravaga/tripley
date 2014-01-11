@@ -41,6 +41,9 @@ group :development do
   gem 'binding_of_caller'
 end
 
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'slim', "~> 2.0.2"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
