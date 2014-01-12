@@ -3,7 +3,6 @@
 		.ui.red.ribbon.label
 			= "Day #{day+1}"
 		.day_container
-			- 
 			- for place in @result[day]
 				div.ui.label.teal
 					i.icon.large class=(TI[place.place_type.downcase])

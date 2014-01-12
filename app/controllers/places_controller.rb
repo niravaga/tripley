@@ -18,7 +18,7 @@ class PlacesController < ApplicationController
   def results
     params[:tags] ||= []
     params[:tags] << params[:kind].downcase if params[:kind].present?
-    params[:tags] = params[:tags] + [:spa,:massage] if params[:text].present?
+    params[:tags] = params[:tags] + [:rapchandus] if params[:text].present?
     @places = Place.where(country: params[:country]).tagged_with(params[:tags], any: true)
     @result = []
     # params[:days].to_i.times do |day|
