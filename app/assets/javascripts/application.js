@@ -42,6 +42,7 @@ $(function() {
 ;
 	$('.day_container').shapeshift({
 		 enableCrossDrop: true,
-	   enableResize: true
+	   enableResize: true,
+	   align: 'left'
 	});
 });
