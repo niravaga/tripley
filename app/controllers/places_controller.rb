@@ -16,9 +16,8 @@ class PlacesController < ApplicationController
   end
 
   def results
-    binding.pry
+    params[:tags] << params[:kind].downcase
     @places = Place.where(country: params[:country]).tagged_with(params[:tags], any: true)
-    binding.pry
   end
 
   # GET /places/new
