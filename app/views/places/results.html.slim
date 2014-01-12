@@ -3,7 +3,8 @@
 		.ui.red.ribbon.label
 			= "Day #{day+1}"
 		.day_container
-			- for place in @places
+			- 
+			- for place in @result[day]
 				div.ui.label.teal
 					= place.name
 					.ui.corner.label.left.teal

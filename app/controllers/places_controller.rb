@@ -20,6 +20,11 @@ class PlacesController < ApplicationController
     params[:tags] << params[:kind].downcase if params[:kind].present?
     params[:tags] = params[:tags] + [:spa,:massage] if params[:text].present?
     @places = Place.where(country: params[:country]).tagged_with(params[:tags], any: true)
+    @result = []
+    params[:days].to_i.times do |day|
+      @result[day] = @places.pop((@places.length/params[:days].to_i).to_i)
+    end
+    @result[0] += @places.to_a
   end
 
   # GET /places/new

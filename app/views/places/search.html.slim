@@ -79,7 +79,7 @@
             .text
           i.dropdown.icon
           .menu
-            - for kind in ['Family', 'Honeymoon', 'Leisure', 'Birthday', 'Anniversary', 'Bachelor', 'Casual Meet', 'Catch up', 'Stress buster', 'Retirement']
+            - for kind in ['Family', 'Honeymoon', 'Leisure', 'Birthday', 'Anniversary', 'Bachelor', 'Casual Meet', 'Catch up', 'Stress buster', 'Retirement', 'Business']
               - next if kind.blank?
               .item.active data-text=kind
                 = kind
