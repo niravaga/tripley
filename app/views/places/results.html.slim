@@ -4,5 +4,7 @@
 			= "Day #{day+1}"
 		.day_container
 			- for place in @places
-				div
+				div.ui.label.teal
 					= place.name
+					.ui.corner.label.left.teal
+						i.icon.reorder
