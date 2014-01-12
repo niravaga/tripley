@@ -4,5 +4,6 @@ TI = {
 	'business' => :briefcase,
 	'sport' => :trophy,
 	'museum' => :museum,
-	'outdoors' => :moon
+	'nightlife' => :moon,
+	'outdoors' => :road
 }
