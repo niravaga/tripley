@@ -56,3 +56,5 @@ gem 'slim', "~> 2.0.2"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'acts-as-taggable-on'
+
+gem 'seed_dump'
