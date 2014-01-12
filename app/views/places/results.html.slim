@@ -6,6 +6,8 @@
 			- 
 			- for place in @result[day]
 				div.ui.label.teal
-					= place.name
+					i.icon.large class=(TI[place.place_type.downcase])
+					div style='padding-top:7px;'
+						= place.name
 					.ui.corner.label.left.teal
 						i.icon.reorder
