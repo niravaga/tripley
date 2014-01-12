@@ -3,11 +3,6 @@
 		.ui.red.ribbon.label
 			= "Day #{day+1}"
 		.day_container
-			div
-				| ssup
-			div
-				| ssup
-			div
-				| ssup
-			div
-				| ssup
+			- for place in @places
+				div
+					= place.name
